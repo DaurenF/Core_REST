@@ -27,7 +27,7 @@ function fillLoggedUser(userData, logged){
         user.roles.forEach(role => roleNames.push(" " + role.name.toString()
             .replaceAll('ROLE_', '')));
 
-        logged.innerHTML ='logged as: '+ user.username;
+        logged.innerHTML ='logged as: '+ user.username + 'with roles: ' + roleNames.toString();
     })
 }
 function fillPage(userData, tbody) {

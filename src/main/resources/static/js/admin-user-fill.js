@@ -15,9 +15,10 @@ function fillPage(userData, tbody) {
 
     userData.forEach(user => {
         let roleNames = [];
-        document.getElementById("user_role").innerHTML='logged as '+user.username;
+
         user.roles.forEach(role => roleNames.push(" " + role.name.toString()
             .replaceAll('ROLE_', '')));
+        document.getElementById("user_role").innerHTML='logged as '+user.username +' with roles: ' + roleNames.toString();
 
         const tRow = document.createElement("tr");
         tRow.innerHTML =
