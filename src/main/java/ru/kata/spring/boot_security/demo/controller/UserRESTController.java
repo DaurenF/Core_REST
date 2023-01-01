@@ -31,7 +31,6 @@ public class UserRESTController {
     public ModelAndView getUserPage(Model model, Principal principal) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user/user-page");
-        modelAndView.addObject("user", userService.getUserByUsername(principal.getName()));
         return modelAndView;
     }
 

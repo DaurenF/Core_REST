@@ -30,11 +30,6 @@ public class AdminRESTController {
     public ModelAndView getAdminPage(Principal principal, @ModelAttribute ("user") User user) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("admin/admin-page");
-        Long id = userService.getUserByUsername(principal.getName()).getId();
-        modelAndView.addObject("user", userService.getUserById(id));
-        modelAndView.addObject("usersList", userService.getAllUsers());
-        modelAndView.addObject("rolesList", roleService.getRoles());
-        modelAndView.addObject("newUser", new User());
         return modelAndView;
     }
 
