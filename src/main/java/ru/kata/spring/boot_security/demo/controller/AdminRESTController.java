@@ -26,20 +26,6 @@ public class AdminRESTController {
         this.userService = userService;
         this.roleService = roleService;
     }
-    @RequestMapping(value = "")
-    public ModelAndView getAdminPage(Principal principal, @ModelAttribute ("user") User user) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/admin-page");
-        return modelAndView;
-    }
-
-    @RequestMapping("/admin-user")
-    public ModelAndView getAdminUserpage(Principal principal){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("admin/admin-user-page");
-        modelAndView.addObject("user",userService.getUserByUsername(principal.getName()));
-        return modelAndView;
-    }
 
     @GetMapping("/current-user")
     public ResponseEntity<List<User>> getCurrentUser(Principal principal){

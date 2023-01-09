@@ -27,13 +27,6 @@ public class UserRESTController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "")
-    public ModelAndView getUserPage(Model model, Principal principal) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user/user-page");
-        return modelAndView;
-    }
-
     @GetMapping("/getUser")
     public ResponseEntity<List<User>> getUser(Principal principal) {
         Long id = userService.getUserByUsername(principal.getName()).getId();
